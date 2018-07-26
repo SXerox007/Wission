@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:ignore="RtlSymmetry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <include layout="@layout/onboarding_toolbar" />
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/llCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_margin="@dimen/spacing_small"
+            android:background="@drawable/background_rectangle_filled_white"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_normal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnLoginFb"
+                style="@style/primary_button"
+                android:background="@drawable/background_button_selector_blue"
+                android:paddingEnd="@dimen/spacing_medium"
+                android:paddingStart="@dimen/spacing_medium"
+                android:text="@string/continue_with_facebook" />
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/small_textView.Gray"
+                android:layout_gravity="center"
+                android:text="@string/we_never_post_anything_without_your_permission" />
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/small_textView.Gray"
+                android:layout_gravity="center"
+
+                android:text="@string/or" />
+
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/normal_textView.Black"
+                android:layout_gravity="center"
+
+                android:text="@string/sign_in" />
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/etEmailPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:background="@drawable/background_filled_accent_without_padding"
+                android:hint="@string/email_address_mobile_number"
+                android:padding="@dimen/padding_normal"
+                tools:text="Sumit Thakur" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_filled_accent_without_padding"
+                    android:hint="@string/password"
+                    android:layout_margin="@dimen/margin_normal"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/padding_normal" />
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvForgotPassword"
+                style="@style/normal_textView.Black"
+                android:layout_gravity="center"
+                android:text="@string/forgot_password" />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/normal_textView.Gray"
+                    android:text="@string/don_t_have_an_account" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tvCreate"
+                    style="@style/normal_textView"
+                    android:text="@string/create"
+                    android:textColor="@color/black" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnSignIn"
+            style="@style/primary_button"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/llCard"
+            android:padding="@dimen/spacing_small"
+            android:text="@string/label_sign_in" />
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Wission</string>
+
+    <string name="welcome_and_sign_up">Welcome and Sign In</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="we_never_post_anything_without_your_permission">We never post anything without your permission!</string>
+    <string name="or">Or</string>
+    <string name="sign_in">SignIn using</string>
+    <string name="email_address_mobile_number">Enter email Address/Mobile Number</string>
+    <string name="password">password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="don_t_have_an_account">Don\'t have any Account?</string>
+    <string name="create">Create</string>
+    <string name="label_sign_in">SignIn</string>
+
 </resources>
