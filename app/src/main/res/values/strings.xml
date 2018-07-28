@@ -17,7 +17,8 @@
     <string name="err_password">Password must contain at least one capital letter, one small and one digit. (e.g Sumit007)</string>
     <string name="email_phone_required">Email/Phone is required</string>
     <string name="password_required">Password is required</string>
-
+    <string name="api_key_value">AIzaSyCV9USRVKsMKPmJv2jW485Fn3yj5YYp1Os</string>
+    <string name="error_player">Player Error</string>
 
 
 </resources>
