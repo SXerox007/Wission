@@ -5,4 +5,14 @@ package com.example.sumitthakur.wission.ui.login;
  */
 
 public interface LoginView {
+
+    void errMessageEmailPhoneIncorrect();
+
+    void errorPassword();
+
+    void onLoginSucess();
+
+    void errorEmptyEmailPhone();
+
+    void errorEmptyPassword();
 }

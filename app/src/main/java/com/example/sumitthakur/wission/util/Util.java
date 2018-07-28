@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.view.View;
 
 /**
  * Created by sumitthakur on 25/07/18.
@@ -53,5 +54,20 @@ public class Util {
         fromContext.startActivity(intention);
         ActivityCompat.finishAffinity(fromContext);
     }
+
+
+    /**
+     * Method to set same OnClickListener on multiple views
+     *
+     * @param listener listener
+     * @param views    views
+     */
+    public static void setOnClickListener(final View.OnClickListener listener, final View... views) {
+
+        for (View view : views) {
+            view.setOnClickListener(listener);
+        }
+    }
+
 
 }

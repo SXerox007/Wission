@@ -5,4 +5,6 @@ package com.example.sumitthakur.wission.ui.login;
  */
 
 public interface LoginPresenter {
+
+    void onLoginClick(String emailPhone, String password);
 }

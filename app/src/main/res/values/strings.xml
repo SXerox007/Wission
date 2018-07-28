@@ -12,5 +12,12 @@
     <string name="don_t_have_an_account">Don\'t have any Account?</string>
     <string name="create">Create</string>
     <string name="label_sign_in">SignIn</string>
+    <string name="label_dummy_label_not_in_used">Dummy click not in used.</string>
+    <string name="err_email_phone_incorrect">Please enter the email/phone correct.</string>
+    <string name="err_password">Password must contain at least one capital letter, one small and one digit. (e.g Sumit007)</string>
+    <string name="email_phone_required">Email/Phone is required</string>
+    <string name="password_required">Password is required</string>
+
+
 
 </resources>
