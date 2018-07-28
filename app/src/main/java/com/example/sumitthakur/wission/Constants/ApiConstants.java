@@ -7,5 +7,8 @@ package com.example.sumitthakur.wission.Constants;
 public interface ApiConstants {
 
     String DEV_KEY = "AIzaSyCV9USRVKsMKPmJv2jW485Fn3yj5YYp1Os";
-    String PART = "statistics";
+    String PART = "snippet";
+    String QUESTION = "comedy";
+    String VIDEO = "video";
+
 }

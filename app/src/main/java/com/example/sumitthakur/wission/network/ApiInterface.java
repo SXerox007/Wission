@@ -12,7 +12,7 @@ import retrofit2.http.QueryMap;
  * The API interface for your application
  */
 public interface ApiInterface {
-    String GET_YOUTUBE_VIDEOS = "/youtube/v3/videos";
+    String GET_YOUTUBE_VIDEOS = "/youtube/v3/search";
 
     /**
      * Gets geo address.

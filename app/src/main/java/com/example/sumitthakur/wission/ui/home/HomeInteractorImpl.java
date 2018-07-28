@@ -25,9 +25,11 @@ public class HomeInteractorImpl implements HomeInteractor, ApiConstants {
     @Override
     public void getYoutubeVideos() {
         CommonParams commonParams = new CommonParams.Builder()
-                .add("key", DEV_KEY)
                 .add("part", PART)
-                .add("maxResults", 20)
+                .add("q", QUESTION)
+                .add("type", VIDEO)
+                .add("key", DEV_KEY)
+                //.add("maxResults", 20)
                 .build();
 
         mApiInterface.getGeoAddress(commonParams.getMap()).enqueue(new ResponseResolver<CommonData>(mRetrofit) {
