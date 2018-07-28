@@ -30,7 +30,7 @@ public final class RestClient {
     private static Retrofit retrofit = null;
     private static Retrofit retrofitGoogle = null;
     private static Retrofit retrofitWithIncreaseTimeout = null;
-    private static String BASE_URL = "";
+    private static String BASE_URL = "https://maps.googleapis.com/";
     //Integer SSL_KEY_PASSWORD_STRING_ID = R.string.sslKeyPassword;
 
     /**

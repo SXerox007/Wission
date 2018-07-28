@@ -3,22 +3,26 @@ package com.example.sumitthakur.wission.ui.home;
 import android.os.Bundle;
 
 import com.example.sumitthakur.wission.R;
+import com.example.sumitthakur.wission.network.RestClient;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 
-public class HomeActivity extends YouTubeFailureRecoveryActivity {
+public class HomeActivity extends YouTubeFailureRecoveryActivity implements HomeView {
 
+    private HomePresenter homePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        homePresenter = new HomePresenterImpl(this, new HomeInteractorImpl(RestClient.getRetrofitBuilder()));
         init();
     }
 
     private void init() {
+        homePresenter.getVideosYoutube();
         YouTubePlayerView youTubeView = findViewById(R.id.youtube_view);
         youTubeView.initialize(getString(R.string.api_key_value), this);
     }
@@ -26,9 +30,9 @@ public class HomeActivity extends YouTubeFailureRecoveryActivity {
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
         // if (!wasRestored) {
-       // youTubePlayer.cueVideo("gm0iQQyKHlQ");
+        // youTubePlayer.cueVideo("gm0iQQyKHlQ");
         youTubePlayer.loadVideo("wKJ9KzGQq0w");
-       // youTubePlayer.play();
+        // youTubePlayer.play();
         //}
     }
 
