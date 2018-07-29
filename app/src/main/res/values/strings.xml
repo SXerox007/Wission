@@ -19,6 +19,7 @@
     <string name="password_required">Password is required</string>
     <string name="api_key_value">AIzaSyCV9USRVKsMKPmJv2jW485Fn3yj5YYp1Os</string>
     <string name="error_player">Player Error</string>
+    <string name="label_home">Wission</string>
 
 
 </resources>

@@ -28,7 +28,7 @@ public class HomeInteractorImpl implements HomeInteractor, ApiConstants {
                 .add("part", PART)
                 .add("q", QUESTION)
                 .add("type", VIDEO)
-                .add("key", DEV_KEY)
+                .add("key", "<" + DEV_KEY + ">")
                 //.add("maxResults", 20)
                 .build();
 

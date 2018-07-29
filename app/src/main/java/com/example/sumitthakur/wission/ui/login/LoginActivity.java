@@ -29,6 +29,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     }
 
     private void init() {
+        findViewById(R.id.ivBack).setVisibility(View.GONE);
         etEmailPhone = findViewById(R.id.etEmailPhone);
         etPassword = findViewById(R.id.etPassword);
         Util.setOnClickListener(this, findViewById(R.id.btnSignIn),
@@ -74,7 +75,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onLoginSucess() {
-        Util.startFreshActivity(this, HomeActivity.class,null);
+        Util.startFreshActivity(this, HomeActivity.class, null);
     }
 
     @Override
