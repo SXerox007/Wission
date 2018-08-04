@@ -6,5 +6,5 @@ package com.example.sumitthakur.wission.ui.home;
 
 public interface HomePresenter {
 
-    void getVideosYoutube();
+    void getVideosYoutube(final String searchText);
 }

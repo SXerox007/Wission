@@ -1,19 +1,29 @@
 package com.example.sumitthakur.wission.ui.home;
 
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.sumitthakur.wission.R;
+import com.example.sumitthakur.wission.adapter.YoutubeAdapter;
+import com.example.sumitthakur.wission.base.BaseActivity;
+import com.example.sumitthakur.wission.model.YoutubeResponse;
 import com.example.sumitthakur.wission.network.RestClient;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
+import com.example.sumitthakur.wission.ui.videoplayer.YoutubeVideoPlayerActivity;
+import com.example.sumitthakur.wission.util.Util;
 
 
-public class HomeActivity extends YouTubeFailureRecoveryActivity implements HomeView {
+import static com.example.sumitthakur.wission.Constants.ApiConstants.QUESTION;
+import static com.example.sumitthakur.wission.Constants.AppConstants.VIDEO_ID;
+
+
+public class HomeActivity extends BaseActivity implements HomeView, YoutubeAdapter.onItemClicked, View.OnClickListener {
 
     private HomePresenter homePresenter;
+    private RecyclerView rvVideos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,44 +34,44 @@ public class HomeActivity extends YouTubeFailureRecoveryActivity implements Home
     }
 
     private void init() {
-        homePresenter.getVideosYoutube();
+        homePresenter.getVideosYoutube(QUESTION);
+        rvVideos = findViewById(R.id.rvVideos);
         findViewById(R.id.ivBack).setVisibility(View.GONE);
         findViewById(R.id.ivMenu).setVisibility(View.VISIBLE);
         ((AppCompatTextView) findViewById(R.id.tvHeading)).setText(getString(R.string.label_home));
-        YouTubePlayerView youTubeView = findViewById(R.id.youtube_view);
-        youTubeView.initialize(getString(R.string.api_key_value), this);
-    }
-
-    @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
-        // if (!wasRestored) {
-        // youTubePlayer.cueVideo("gm0iQQyKHlQ");
-        youTubePlayer.loadVideo("wKJ9KzGQq0w");
-        // youTubePlayer.play();
-        //}
-    }
-
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-
+        Util.setOnClickListener(this, findViewById(R.id.ivSearch));
     }
 
 
-//    @Override
-//    public void onResume(){
-//        super.onResume();
-//        try {
-//            if (video == null) {
-//                return;
-//            }
-//
-//            YouTubePlayer.loadVideo(String videoId, int timeMillis);
-//
-//        } catch (Throwable ignored) {}
-//    }
+    @Override
+    public void setRecyclerviewData(YoutubeResponse commonData) {
+        YoutubeAdapter youtubeAdapter = new YoutubeAdapter();
+        rvVideos.setLayoutManager(new LinearLayoutManager(this));
+        rvVideos.setAdapter(youtubeAdapter);
+        youtubeAdapter.setData(commonData.getItems(), this);
+
+    }
 
     @Override
-    protected YouTubePlayer.Provider getYouTubePlayerProvider() {
-        return findViewById(R.id.youtube_view);
+    public void onEmptySearchFieldEnterError() {
+        showToast(getString(R.string.err_empty_field_not_allowed));
+    }
+
+    @Override
+    public void onItemClickedVideo(final String videoId) {
+        Bundle bundle = new Bundle();
+        bundle.putString(VIDEO_ID, videoId);
+        Util.startActivity(this, YoutubeVideoPlayerActivity.class, bundle);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ivSearch:
+                homePresenter.getVideosYoutube(((AppCompatEditText) findViewById(R.id.etSearchField)).getText().toString());
+                break;
+            default:
+        }
+
     }
 }

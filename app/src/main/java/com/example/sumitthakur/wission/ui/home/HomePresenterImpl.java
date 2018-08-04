@@ -14,8 +14,13 @@ public class HomePresenterImpl implements HomePresenter {
         this.interactor = homeInteractor;
     }
 
+
     @Override
-    public void getVideosYoutube() {
-        interactor.getYoutubeVideos();
+    public void getVideosYoutube(String searchText) {
+        if (!searchText.isEmpty())
+            interactor.getYoutubeVideos(view, searchText);
+        else
+            view.onEmptySearchFieldEnterError();
+
     }
 }

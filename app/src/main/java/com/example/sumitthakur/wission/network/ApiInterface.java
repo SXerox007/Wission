@@ -1,6 +1,7 @@
 package com.example.sumitthakur.wission.network;
 
 import com.example.sumitthakur.wission.db.CommonData;
+import com.example.sumitthakur.wission.model.YoutubeResponse;
 
 import java.util.Map;
 
@@ -12,7 +13,7 @@ import retrofit2.http.QueryMap;
  * The API interface for your application
  */
 public interface ApiInterface {
-    String GET_YOUTUBE_VIDEOS = "/youtube/v3/search`";
+    String GET_YOUTUBE_VIDEOS = "/youtube/v3/search";
 
     /**
      * Gets geo address.
@@ -21,6 +22,6 @@ public interface ApiInterface {
      * @return Response in GeoCodedApiResponse
      */
     @GET(GET_YOUTUBE_VIDEOS)
-    Call<CommonData> getGeoAddress(@QueryMap Map<String, String> map);
+    Call<YoutubeResponse> getGeoAddress(@QueryMap Map<String, String> map);
 
 }

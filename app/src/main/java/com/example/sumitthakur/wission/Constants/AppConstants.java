@@ -10,4 +10,5 @@ public interface AppConstants {
     String YOUR_SECURITY_KEY = "wission1.0.0";
     String PREF_USERNAME = "user_name";
     String PREF_PASSWORD = "PREF_PASSWORD";
+    String VIDEO_ID = "video_id";
 }

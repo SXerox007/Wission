@@ -8,6 +8,7 @@ import com.example.sumitthakur.wission.R;
 import com.example.sumitthakur.wission.base.BaseActivity;
 import com.example.sumitthakur.wission.db.SecurePreferences;
 import com.example.sumitthakur.wission.ui.home.HomeActivity;
+import com.example.sumitthakur.wission.ui.home.HomeContollerActivity;
 import com.example.sumitthakur.wission.util.Util;
 
 import static com.example.sumitthakur.wission.Constants.AppConstants.PREF_PASSWORD;
@@ -75,7 +76,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onLoginSucess() {
-        Util.startFreshActivity(this, HomeActivity.class, null);
+        saveCredSecurePreference();
+        Util.startFreshActivity(this, HomeContollerActivity.class, null);
     }
 
     @Override

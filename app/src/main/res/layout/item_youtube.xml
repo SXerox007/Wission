@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:id="@+id/llvideo"
+    android:orientation="horizontal">
 
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/youtube_view"
+    <ImageView
+        android:id="@+id/ivVideoImg"
+        android:layout_width="@dimen/coustom_height_normal"
+        android:layout_height="@dimen/coustom_height_normal"
+        android:src="@color/black" />
+
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium"
+            android:textColor="@color/pure_black"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold"
+            tools:text="@string/app_name"
+
+            />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold"
+            tools:text="@string/app_name"
+
+            />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
 
 </android.support.v7.widget.LinearLayoutCompat>

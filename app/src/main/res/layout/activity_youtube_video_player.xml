@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.sumitthakur.wission.ui.videoplayer.YoutubeVideoPlayerActivity">
+
+
+    <include layout="@layout/toolbar_app" />
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:padding="@dimen/padding_large"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/ivThumbsup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:src="@drawable/ic_thumb_up_black_24dp" />
+
+        <ImageView
+            android:id="@+id/ivThumbsDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:src="@drawable/ic_thumb_down_black_24dp" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/llQuantity"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:background="@color/gray_light" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:text="Write Comments..."
+        android:textColor="@color/red"
+        android:textSize="@dimen/font_large"
+        android:textStyle="bold|italic" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/etComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        android:hint="@string/write_comments"
+        android:padding="@dimen/padding_large" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/llQuantity"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:background="@color/gray_light" />
+
+
+</android.support.v7.widget.LinearLayoutCompat>
